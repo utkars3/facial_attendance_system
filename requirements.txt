@@ -1,0 +1,9 @@
+numpy
+pandas
+redis
+opencv-python-headless
+scikit-learn
+streamlit==1.17.0
+streamlit-webrtc==0.47.9
+insightface
+onnxruntime==1.16.1
