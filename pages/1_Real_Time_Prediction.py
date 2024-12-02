@@ -4,6 +4,7 @@ import streamlit as st
 from streamlit_webrtc import webrtc_streamer
 import av
 import time
+import streamlit.components.v1 as components
 
 # st.set_page_config(page_title='Real Time', layout='centered')
 st.subheader('Real Time Attendance System')
@@ -11,7 +12,7 @@ st.subheader('Real Time Attendance System')
 #retrive data from redis db
 with st.spinner('Retriving Data from Redis DB'):
     redis_face_db=face_rec.retrive_data('academy:enrollment')
-    st.dataframe(redis_face_db)
+#    st.dataframe(redis_face_db)
 
 st.success("Data successfully retrived from redis")
 
@@ -45,3 +46,5 @@ def video_frame_callback(frame):
 webrtc_streamer(key="realtimeprediction", video_frame_callback=video_frame_callback, rtc_configuration={
         "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
     })
+
+
